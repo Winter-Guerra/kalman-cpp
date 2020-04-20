@@ -63,3 +63,12 @@ void KalmanFilter::update(const Eigen::VectorXd& y, double dt, const Eigen::Matr
   this->dt = dt;
   update(y);
 }
+
+// Added by Winter
+// Allows for varying process noise & measurement noise
+void KalmanFilter::update(const Eigen::VectorXd& y, const Eigen::MatrixXd Q, const Eigen::MatrixXd R) {
+
+  this->Q = Q;
+  this->R = R;
+  update(y);
+}

@@ -60,6 +60,12 @@ public:
   */
   void update(const Eigen::VectorXd& y, double dt, const Eigen::MatrixXd A);
 
+   /**
+  * Added by Winter: Update the estimated state based on measured values and time-varying matrices for process & measurement noise.
+  */
+  void update(const Eigen::VectorXd& y, const Eigen::MatrixXd Q, Eigen::MatrixXd R);
+
+
   /**
   * Return the current state and time.
   */
