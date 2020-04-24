@@ -70,6 +70,7 @@ public:
   * Return the current state and time.
   */
   Eigen::VectorXd state() { return x_hat; };
+  Eigen::MatrixXd cov() { return P; };
   double time() { return t; };
 
 private:
